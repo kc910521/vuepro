@@ -17,6 +17,11 @@ export default new Router({
       component: mFrame,
       children: [
         {
+          path: '',
+          name: 'HelloWosasrld2',
+          component: HelloWorld2
+        },
+        {
           path: 'h2',
           name: 'HelloWosasrld2',
           component: HelloWorld2
@@ -24,10 +29,11 @@ export default new Router({
         {
           path: 'list',
           name: 'list',
-          component: List
+          component: List,
+          meta: { requiresAuth: true }
         },
         {
-          path: 'about',
+          path: 'about/:userId',
           name: 'about',
           component: About
         }
@@ -39,7 +45,8 @@ export default new Router({
       component: HelloWorld1
     },
     {
-      path: '/login',
+      path: '/login_r',
+      redirect: '/login',
       name: 'login',
       component: Login
     }
