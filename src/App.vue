@@ -23,7 +23,6 @@ export default {
 </script>
 
 <style>
-@import '../static/css/bootstrap.css';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

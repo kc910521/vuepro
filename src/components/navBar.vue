@@ -26,5 +26,4 @@ export default {
 
 
 <style scoped>
-    @import '../../static/css/bootstrap.min.css'
 </style>
