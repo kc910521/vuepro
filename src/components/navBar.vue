@@ -18,6 +18,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'navBar'
 }
@@ -25,4 +26,5 @@ export default {
 
 
 <style scoped>
+    @import '../../static/css/bootstrap.min.css'
 </style>

@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import mFrame from '@/components/mFrame'
 import HelloWorld2 from '@/components/HelloWorld'
+import HelloWorld1 from '@/components/HelloWorld.1'
+import Login from '@/components/Login'
+import List from '@/components/DomainList'
+import About from '@/components/About'
 
 Vue.use(Router)
 
@@ -10,12 +14,34 @@ export default new Router({
     {
       path: '/',
       name: 'mFrame',
-      component: mFrame
+      component: mFrame,
+      children: [
+        {
+          path: 'h2',
+          name: 'HelloWosasrld2',
+          component: HelloWorld2
+        },
+        {
+          path: 'list',
+          name: 'list',
+          component: List
+        },
+        {
+          path: 'about',
+          name: 'about',
+          component: About
+        }
+      ]
     },
     {
-      path: '/origin',
-      name: 'HelloWosasrld2',
-      component: HelloWorld2
+      path: '/h1',
+      name: 'HelloWosasrld1',
+      component: HelloWorld1
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })
