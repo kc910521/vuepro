@@ -10,15 +10,35 @@
     <div>
         <h2>STAFF PLACE</h2>
         <router-link to="/login_r">登录</router-link>
-        <router-link to="/">你好 世界</router-link>
+        <router-link to="/">你好 {{ uname }}</router-link>
         <!-- 路由匹配到的组件将渲染在这里 -->
-        <router-view></router-view>
+        <router-view v-on:userListener="userListener"></router-view>
     </div>
 </template>
 
 <script>
+import './assets/js/model'
+
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      uname: global.USER
+    }
+  },
+  mounted () {
+    this.init()
+  },
+  methods: {
+    init () {
+      console.log('initd')
+      this.uname = global.USER
+    },
+    userListener (data) {
+      console.log(`userListener:${data}`)
+      this.uname = data
+    }
+  }
 }
 </script>
 

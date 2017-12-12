@@ -1,5 +1,5 @@
 <template>
- <div id="top" class="container">
+ <div id="top" class="container-fluid">
    <ul class="nav nav-pills justify-content-center">
       <li v-for="(menu,index) in menus" v-on:click="listClick(index)" class="nav-item">
         <a v-if="menu.to == null" class="nav-link" v-bind:class="{'active':clickIdx==index}" href="javascript:void(0);">{{ menu.name }}</a>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 import MyRouter from '../router/index'
 
 // const userId = 223
