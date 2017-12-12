@@ -1,20 +1,11 @@
 <template>
  <div id="top" class="container">
    <ul class="nav nav-pills justify-content-center">
-    <li class="nav-item">
-      <router-link  to="/h2" class="nav-link active" href="#">首页</router-link>
-    </li>
-    <li class="nav-item">
-      <router-link tag="a" to="/List" class="nav-link" href="#">域名列表</router-link>
-    </li>
-    <li class="nav-item">
-      <router-link :to="{ name: 'about', params: { userId: 123 }}" class="nav-link" href="#">关于</router-link>
-    </li>
-    <li class="nav-item">
-      <router-link class="nav-link disabled" href="#">Disabled</router-link>
-    </li>
+      <li v-for="(menu,index) in menus" v-on:click="listClick(index)" class="nav-item">
+        <a v-if="menu.to == null" class="nav-link" v-bind:class="{'active':clickIdx==index}" href="javascript:void(0);">{{ menu.name }}</a>
+        <router-link tag="a" class="nav-link" v-bind:class="{'active':clickIdx==index}"  :to="{ path: menu.to}" v-else>{{ menu.name }}</router-link>
+      </li>
   </ul>
-  <button v-on:click="logout">注销</button>
   <div>777</div>
   <router-view/>
   <div>888</div>
@@ -24,23 +15,46 @@
 <script>
 import MyRouter from '../router/index'
 
-const userId = 223
+// const userId = 223
+
+const menus1 = [
+  {
+    name: '首页',
+    to: '/h2'
+  },
+  {
+    name: '域名列表',
+    to: '/List'
+  },
+  {
+    name: '关于',
+    to: 'about/223'
+  },
+  {
+    name: '注销',
+    to: '/login_r'
+  }
+]
 
 export default {
   MyRouter,
   name: 'mFrame',
   methods: {
-    logout: function () {
-      MyRouter.push({
-        name: 'about',
-        params: {userId}
-      })
+    listClick: function (index) {
+      this.clickIdx = index
+      console.log(`cindex:${index}`)
+      // MyRouter.push({
+      //   name: 'about',
+      //   params: {userId}
+      // })
     }
   },
   data () {
     return {
       isActive: true,
-      hasError: false
+      hasError: false,
+      menus: menus1,
+      clickIdx: 0
     }
   }
 }
