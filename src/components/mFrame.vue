@@ -21,15 +21,15 @@ import MyRouter from '../router/index'
 const menus1 = [
   {
     name: '首页',
-    to: '/h2'
+    to: '/main/h2'
   },
   {
     name: '域名列表',
-    to: '/List'
+    to: '/main/List'
   },
   {
     name: '关于',
-    to: 'about/223'
+    to: '/main/about/223'
   },
   {
     name: '注销',
@@ -65,9 +65,6 @@ export default {
   /* .active>a {
     color: red
   } */
-  a:active {
-    color: red
-  }
 
   #top {
     background-color: lightblue;

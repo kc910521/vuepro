@@ -10,20 +10,20 @@
     <div>
         <h2>STAFF PLACE</h2>
         <router-link to="/login_r">登录</router-link>
-        <router-link to="/">你好 {{ uname }}</router-link>
+        <router-link to="/main">你好 {{ user.userName }}</router-link>
         <!-- 路由匹配到的组件将渲染在这里 -->
         <router-view v-on:userListener="userListener"></router-view>
     </div>
 </template>
 
 <script>
-import './assets/js/model'
+import {User} from './assets/js/model'
 
 export default {
   name: 'app',
   data () {
     return {
-      uname: global.USER
+      user: new User(0, '游客')
     }
   },
   mounted () {
@@ -32,11 +32,15 @@ export default {
   methods: {
     init () {
       console.log('initd')
-      this.uname = global.USER
+      this.user = new User(0, '游客')
     },
     userListener (data) {
-      console.log(`userListener:${data}`)
-      this.uname = data
+      if (data instanceof User) {
+        console.log(`userListener:${data}`)
+        this.user = data
+      } else {
+        console.error(`error user emit in ${data}`)
+      }
     }
   }
 }

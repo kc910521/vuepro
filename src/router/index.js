@@ -10,9 +10,10 @@ import About from '@/components/About'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/main',
       name: 'mFrame',
       component: mFrame,
       children: [
@@ -49,6 +50,10 @@ export default new Router({
       // redirect: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/',
+      redirect: '/main'
     }
   ]
 })
