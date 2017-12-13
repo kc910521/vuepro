@@ -1,23 +1,18 @@
 <template>
  <div id="login" class="container">
-
+   <br/>
     <form @submit.prevent="doLogin">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" maxlength="29" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="loginName">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <!-- <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" readonly>
-    </div> -->
-    <div class="form-check">
-        <label class="form-check-label">
-        <input type="checkbox" class="form-check-input">
-        Check me out
-        </label>
-    </div>
-    <button type="submit" class="btn btn-primary">登录</button>
+      <label for="exampleInputEmail1">Email </label><br/><br/>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="email" maxlength="29" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="loginName">
+          <span class="input-group-btn">
+          <button class="btn btn-primary" type="submit">登录 !</button>
+          </span>
+        </div>
+      </div>
+      <br/><br/><br/>
+      <small id="emailHelp" class="form-text text-muted">别害怕, 不需要密码.</small>
     </form>
  </div> 
 </template>

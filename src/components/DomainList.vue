@@ -12,9 +12,13 @@
           </li>
         </ul>
       </div>
+      <pager></pager>
   </div>
 </template>
 <script>
+
+import pager from './pager'
+
 export default {
   data () {
     return {
@@ -33,11 +37,14 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    pager
   }
 }
 </script>
 
-<style>
+<style scoped>
   ul {
     list-style:none;
   }

@@ -5,12 +5,17 @@
     <router-view/>
   </div>
 </template>-->
-<template id="home">
+<template id="home" >
     <!-- 注意：组件只能有一个根元素，所以我们包装到这个div中 -->
     <div>
-        <h2>STAFF PLACE</h2>
-        <router-link to="/login_r">登录</router-link>
-        <router-link to="/main">你好 {{ user.userName }}</router-link>
+      <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2 text-right text-truncate">
+          <router-link v-if="user == null || user.id == 0" to="/login_r">登录</router-link>
+          <router-link to="/login_r" @click.native="logout()" v-else>注销</router-link>
+          <router-link to="/main">你好 {{ user.userName }}</router-link>
+        </div>
+      </div>
         <!-- 路由匹配到的组件将渲染在这里 -->
         <router-view v-on:userListener="userListener"></router-view>
     </div>
@@ -32,6 +37,9 @@ export default {
   methods: {
     init () {
       console.log('initd')
+    },
+    logout () {
+      console.log('logout')
       this.user = new User(0, '游客')
     },
     userListener (data) {
