@@ -9,8 +9,8 @@
     <!-- 注意：组件只能有一个根元素，所以我们包装到这个div中 -->
     <div>
       <div class="row">
-        <div class="col-10"></div>
-        <div class="col-2 text-right text-truncate">
+        <div class="col-9"></div>
+        <div class="col-3 text-right text-truncate">
           <router-link v-if="user == null || user.id == 0" to="/login_r">登录</router-link>
           <router-link to="/login_r" @click.native="logout()" v-else>注销</router-link>
           <router-link to="/main">你好 {{ user.userName }}</router-link>
@@ -63,7 +63,7 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: royalblue;
+  /* background-color: royalblue; */
 
 }
 body,html {

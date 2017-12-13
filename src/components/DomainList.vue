@@ -1,7 +1,12 @@
 <template>
   <div>
-      <h3>域名列表</h3>
-      <div>
+    <div class="container">
+      <div  class="card-deck">
+        <kpxCard v-for="itm in nameList" :key="itm.id" :title="itm.name" :header="itm.spDesc" :desc="itm.desc" :to="itm.salePage"></kpxCard>
+      </div>
+    </div>
+
+      <!-- <div>
         <ul>
           <li v-for="itm in nameList">
             <ul class="in_a_line">
@@ -11,35 +16,54 @@
             </ul>
           </li>
         </ul>
-      </div>
+      </div> -->
       <pager></pager>
   </div>
 </template>
 <script>
 
 import pager from './pager'
+import kpxCard from './kpxCard'
+
+const nList = [
+  {
+    id: 1,
+    name: 'qiuku.com',
+    salePage: 'http://www.qiuku.com',
+    price: '未知',
+    spDesc: '秋裤 球裤'
+  },
+  {
+    id: 2,
+    name: 'changku.com',
+    salePage: '',
+    spDesc: '长裤',
+    desc: '见秋裤水水水水水水水水水水水水水水水水水'
+  },
+  {
+    id: 3,
+    name: 'youliliang.com',
+    salePage: '',
+    spDesc: '优力量'
+  },
+  {
+    id: 4,
+    name: 'binsai.com',
+    salePage: '',
+    spDesc: '宾赛',
+    price: '￥8000'
+  }
+]
 
 export default {
   data () {
     return {
-      nameList: [
-        {
-          id: 1,
-          name: 'qiuku.com',
-          salePage: '',
-          price: '未知'
-        },
-        {
-          id: 2,
-          name: 'changku.com',
-          salePage: '',
-          price: '未知'
-        }
-      ]
+      nameList: nList
     }
   },
   components: {
-    pager
+    pager,
+    kpxCard
   }
 }
 </script>

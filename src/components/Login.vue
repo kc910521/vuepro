@@ -2,7 +2,7 @@
  <div id="login" class="container">
    <br/>
     <form @submit.prevent="doLogin">
-      <label for="exampleInputEmail1">Email </label><br/><br/>
+      <label for="exampleInputEmail1" class="text-light">Email </label><br/><br/>
       <div class="col-lg-6">
         <div class="input-group">
           <input type="email" maxlength="29" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="loginName">
