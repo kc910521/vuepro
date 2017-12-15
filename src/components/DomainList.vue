@@ -1,29 +1,18 @@
 <template>
   <div>
     <div class="container">
-      <div  class="card-deck">
-        <kpxCard v-for="itm in nameList" :key="itm.id" :title="itm.name" :header="itm.spDesc" :desc="itm.desc" :to="itm.salePage"></kpxCard>
+      <div class="card-deck" v-for="(nList,index) of nameList">
+        <kpxCard v-for="itm of nList"  :key="itm.id" :title="itm.name" :header="itm.spDesc" :desc="itm.desc" :to="itm.salePage"></kpxCard>
       </div>
     </div>
-
-      <!-- <div>
-        <ul>
-          <li v-for="itm in nameList">
-            <ul class="in_a_line">
-              <li><a>{{ itm.name }}</a></li>
-              <li><a>{{ itm.salePage }}</a></li>
-              <li><a>{{ itm.price }}</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div> -->
-      <pager></pager>
+    <!-- <pager></pager> -->
   </div>
 </template>
 <script>
 
 import pager from './pager'
 import kpxCard from './kpxCard'
+import {SPLIT_DATA_SHOW} from '../assets/js/utils'
 
 const nList = [
   {
@@ -58,7 +47,7 @@ const nList = [
 export default {
   data () {
     return {
-      nameList: nList
+      nameList: SPLIT_DATA_SHOW(3, nList)
     }
   },
   components: {
