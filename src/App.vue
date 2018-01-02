@@ -5,7 +5,7 @@
     <router-view/>
   </div>
 </template>-->
-<template id="home" >
+<template id="home">
     <!-- 注意：组件只能有一个根元素，所以我们包装到这个div中 -->
     <div>
       <div class="row">

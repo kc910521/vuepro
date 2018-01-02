@@ -18,6 +18,7 @@ export default {
 </script>
 <style scoped>
   .card {
+    min-height: 150px;
   }
   .redirectable {
     cursor: pointer;
