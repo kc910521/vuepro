@@ -1,6 +1,6 @@
 <template>
-    <div class="nav fixed-top">
-     <nav class="navbar fixed-top navbar-default bg-light navbar-expand-lg" role="navigation">
+    <div class="nav">
+     <nav class="navbar navbar-default bg-light navbar-expand-lg" role="navigation">
       <div class="container-fluid">
       <div class="navbar-header">
           <a class="navbar-brand" href="#"> Customer </a>
