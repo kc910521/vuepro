@@ -1,5 +1,8 @@
 <template>
   <div id="top" >
+    <nav class="navbar-expand-lgflex-column flex-md-row fill_position_only" v-if="fixTopic" >
+      <a class="navbar-brand" href="#">BLOCK</a>
+    </nav>
     <nav class="navbar navbar-expand-lg  navbar-dark bg-primary flex-column flex-md-row" :class="fixTopic?'fixed-top':''" >
       <a class="navbar-brand" href="#">ZONE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,6 +17,7 @@
         </ul>
       </div>
     </nav>
+
   <div class="container-fluid" >
     <div>777</div>
     <router-view />
@@ -93,7 +97,9 @@ export default {
     margin-top: 2em;
     min-height: 40em;
   }
-
+  .fill_position_only {
+    visibility: hidden;
+  }
 
 </style>
 
