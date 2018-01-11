@@ -1,5 +1,5 @@
 <template>
-  <div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card border-primary mb-3" style="max-width: 20rem;" v-on:mouseover="mOver">
     <div class="card-header">{{ header }}</div>
     <div class="card-body text-primary">
       <h4 class="card-title">
@@ -13,7 +13,12 @@
 <script>
 export default {
   name: 'kpxCard',
-  props: ['header', 'title', 'desc', 'to']
+  props: ['header', 'title', 'desc', 'to'],
+  methods: {
+    mOver: function (e) {
+      console.log(e)
+    }
+  }
 }
 </script>
 <style scoped>

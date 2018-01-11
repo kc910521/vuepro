@@ -91,7 +91,7 @@ export default {
   } */
 
   #top {
-    background-color: lightblue;
+    background-color: whitesmoke;
   }
   .container-fluid {
     margin-top: 2em;
