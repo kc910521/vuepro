@@ -12,7 +12,7 @@
         </div>
       </div>
       <br/><br/><br/>
-      <small id="emailHelp" class="form-text text-muted">别害怕, 不需要密码.</small>
+      <small id="emailHelp" class="form-text text-muted" v-on:click="refreshTim">别害怕, 不需要密码.</small>
     </form>
  </div> 
 </template>
@@ -32,6 +32,9 @@ export default {
       this.$emit('userListener', new User(1, this.loginName))
       console.log(`name:${this.loginName}`)
       window.history.go(-1)
+    },
+    refreshTim: function () {
+      this.$store.commit('refreshTim', new Date() + '===--==')
     }
   }
 }

@@ -3,13 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Vuex from 'vuex'
+import store from './vuex/store'
 import './assets/css/bootstrap.min.css'
 
 Vue.config.productionTip = false
 
+Vue.use(Vuex)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app233',
+  store,
   router,
   template: '<App/>',
   components: { App }

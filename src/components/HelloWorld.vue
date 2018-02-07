@@ -1,25 +1,22 @@
 <template>
-  <div class="hello">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item img-wrap active">
+        <img class="d-block w-100" src="https://cn.bing.com/az/hprichbg/rb/KelpiesFalkirk_EN-US8885510040_1920x1080.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://tse4-mm.cn.bing.net/th?id=OIP.LgFPp8LpMIf9yR5zTaC7ggHaEv&p=0&o=5&pid=1.1" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://cn.bing.com/az/hprichbg/rb/KelpiesFalkirk_EN-US8885510040_1920x1080.jpg" alt="Third slide">
+      </div>
+    </div>
+  </div>
+  <!-- <div class="hello">
+
     <h1 v-on:click="faqMethod">{{ sucker }}</h1>
     <input v-model="sucker">
-    <button>,,</button>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -32,9 +29,9 @@ export default {
     }
   },
   methods: {
-    faqMethod: function () {
-      this.sucker = this.sucker.split('').reverse().join('')
-    }
+    // faqMethod: function () {
+    //   this.sucker = this.sucker.split('').reverse().join('')
+    // }
   }
 }
 </script>
@@ -55,4 +52,34 @@ li {
 a {
   color: #42b983;
 }
+
+
+/* from */
+.img-wrap {
+    /* width: 194px;
+    height: 108px; */
+    float: left;
+    margin-left: 6px;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.img-wrap img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    -webkit-transition: all .5s ease-out .1s;
+    transition: all .5s ease-out .1s;
+}
+.img-wrap:hover img {
+    -webkit-transform: matrix(1.04,0,0,1.04,0,0);
+    -ms-transform: matrix(1.04,0,0,1.04,0,0);
+    transform: matrix(1.04,0,0,1.04,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 </style>

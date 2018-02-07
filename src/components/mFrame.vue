@@ -19,7 +19,7 @@
     </nav>
 
   <div class="container-fluid" >
-    <div>777</div>
+    <div>{{tim}}</div>
     <router-view />
     <div>888</div>
   </div>
@@ -72,6 +72,11 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.scrollPage)
+  },
+  computed: {
+    tim () {
+      return this.$store.state.tim
+    }
   },
   data () {
     return {
