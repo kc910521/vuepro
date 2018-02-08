@@ -4,7 +4,8 @@ export function SPLIT_DATA_SHOW (colNums, orgList) {
   let innerLs = []
   let returnLs = []
   for (var itm of orgList) {
-    console.log(itm)
+    // console.log('io:')
+    // console.log(itm)
     innerLs.push(itm)
     if (ctIdx !== 0 && ctIdx % 2 === 0) {
       returnLs.push(innerLs)

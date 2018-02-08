@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "qiuku.com",
+    "salePage": "http://www.qiuku.com",
+    "price": "未知",
+    "spDesc": "秋裤 球裤"
+  },
+  {
+    "id": 2,
+    "name": "changku.com",
+    "salePage": "",
+    "spDesc": "长裤",
+    "desc": "见秋裤水水水水水水水水水水水水水水水水水"
+  },
+  {
+    "id": 3,
+    "name": "youliliang.com",
+    "salePage": "",
+    "spDesc": "优力量"
+  },
+  {
+    "id": 4,
+    "name": "binsai.com",
+    "salePage": "",
+    "spDesc": "宾赛",
+    "price": "￥8000"
+  }
+]

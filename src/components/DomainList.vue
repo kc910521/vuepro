@@ -14,40 +14,30 @@ import pager from './pager'
 import kpxCard from './kpxCard'
 import {SPLIT_DATA_SHOW} from '../assets/js/utils'
 
-const nList = [
-  {
-    id: 1,
-    name: 'qiuku.com',
-    salePage: 'http://www.qiuku.com',
-    price: '未知',
-    spDesc: '秋裤 球裤'
-  },
-  {
-    id: 2,
-    name: 'changku.com',
-    salePage: '',
-    spDesc: '长裤',
-    desc: '见秋裤水水水水水水水水水水水水水水水水水'
-  },
-  {
-    id: 3,
-    name: 'youliliang.com',
-    salePage: '',
-    spDesc: '优力量'
-  },
-  {
-    id: 4,
-    name: 'binsai.com',
-    salePage: '',
-    spDesc: '宾赛',
-    price: '￥8000'
-  }
-]
-
 export default {
   data () {
     return {
-      nameList: SPLIT_DATA_SHOW(3, nList)
+      nameList: [null]
+    }
+  },
+  created () {
+    this.getDomsData()
+  },
+  methods: {
+    getDomsData: function () {
+      let that = this
+      this.$ajax.get('/src/assets/json/domains.json')
+        .then(function (response) {
+          console.log(response)
+          if (response.status === 200) {
+            that.nameList = SPLIT_DATA_SHOW(3, response.data)
+          } else {
+            console.error('error:' + response.status)
+          }
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
     }
   },
   components: {
