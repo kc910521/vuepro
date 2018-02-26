@@ -17,7 +17,35 @@
 <style scoped>
 html,body {
   min-height: 50em;
-  background-color: #0d265d;
+  transition: background-image 0.2s ease;
+  background: linear-gradient(223deg, #9ce8dd, #a993da, #F0CB54, #0d265d, #6D93A3);
+  background-size: 600% 600%;
+  animation: bg-generator 50s ease infinite;
+  -webkit-font-smoothing: antialiased;
+
+  animation-name: bg-generator;
+  animation-duration: 50s;
+  animation-timing-function: ease;
+  animation-delay: initial;
+  animation-iteration-count: infinite;
+  animation-direction: initial;
+  animation-fill-mode: initial;
+  animation-play-state: initial;
+}
+
+
+@keyframes bg-generator {
+	0% {
+		background-position: 0% 84%
+	}
+
+	50% {
+		background-position: 100% 17%
+	}
+
+	100% {
+		background-position: 0% 84%
+	}
 }
 
 </style>
